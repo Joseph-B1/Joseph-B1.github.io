@@ -3315,20 +3315,16 @@ input, select, textarea {
 
 	}
 
-.image-container {
-    text-align: center;
-    margin: 2em 0;
-}
-
-.centered-image {
-    width: 60%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 6px;
-}
-
-.image-caption {
-    font-size: 0.9em;
-    color: #888;
-    margin-top: 0.5em;
-}
+	.centered-image {
+	    display: block;
+	    margin: 0 auto;
+	    max-width: 60%;   /* adjust if you want it smaller or bigger */
+	    height: auto;
+	}
+	
+	.figure-caption {
+	    text-align: center;
+	    font-size: 0.9em;
+	    margin-top: 6px;
+	    color: #666;
+	}
