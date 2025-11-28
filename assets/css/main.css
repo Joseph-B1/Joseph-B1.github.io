@@ -3318,7 +3318,7 @@ input, select, textarea {
 	.centered-image {
 	    display: block;
 	    margin: 0 auto;
-	    max-width: 60%;   /* adjust if you want it smaller or bigger */
+	    max-width: 90%;   /* adjust if you want it smaller or bigger */
 	    height: auto;
 	}
 	
