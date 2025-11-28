@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Walmart Sales Forecast – Power BI Project</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+    <body class="is-preload">
+
+            <!-- Header -->
+            <section id="header">
+                <header>
+                    <h1 id="logo"><a href="#">Walmart Sales Forecast</a></h1>
+                    <p>Analyzing Sales Forecasting</p>
+                </header>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#one" class="active">Goal</a></li>
+                        <li><a href="#two">Background Information</a></li>
+                        <li><a href="#three">Setup</a></li>
+                        <li><a href="#four">Dashboard Design and Creation</a></li>
+                        <li><a href="#five">Conclusion</a></li>
+                    </ul>
+                </nav>
+
+                <footer>
+                    <ul class="icons">
+                        <li><a href="https://github.com/Joseph-B1" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/joseph-bassey-a21792282" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="mailto:josephbassey65@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                </footer>
+            </section>
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+            
+            <!-- Main -->
+            <div id="main">
+
+                <!-- One -->
+                <section id="one">
+                    <div class="image main" data-position="center">
+                        <img src="images/bibanner.png" alt="" />
+                    </div>
+                    <div class="container">
+                        <header class="major">
+                            <h2>Goal</h2>
+                        </header>
+                        <p>
+                            The Walmart Sales Dashboard project analyzes historical sales data from 2010–2012 to uncover key patterns, measure the impact of holidays and external conditions (weather, fuel price, CPI, unemployment), and generate weekly sales forecasts to support data-driven decision-making.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Two -->
+                <section id="two">
+                    <div class="container">
+                        <header class="major">
+                            <h2>Background Information</h2>
+                        </header>
+
+                        <p>The dataset contains weekly sales records for multiple Walmart stores from February 5, 2010 to November 1, 2012.<br>
+                          Fields included:</p>
+                        <ul>
+                            <li><strong>Store:</strong> Store number</li>
+                            <li><strong>Date:</strong> Week of sales</li>
+                            <li><strong>Weekly_Sales:</strong> Total sales for the week</li>
+                            <li><strong>Holiday_Flag:</strong> 1 = Holiday week, 0 = Non-holiday week</li>
+                            <li><strong>Temperature:</strong> Weather condition during the week</li>
+                            <li><strong>Fuel_Price:</strong> Local fuel cost</li>
+                            <li><strong>CPI:</strong> Consumer Price Index</li>
+                            <li><strong>Unemployment:</strong> Local unemployment rate</li>
+                        </ul>
+                        <p>Holiday periods included in the dataset:</p>
+                        <ul>
+                            <li>Super Bowl</li>
+                            <li>Labour Day</li>
+                            <li>Thanksgiving</li>
+                            <li>Christmas</li>
+                        </ul>
+                      </div>
+                </section>
+
+                <!-- Three -->
+                <section id="three">
+                    <div class="container">
+                        <header class="major">
+                            <h2>Setup</h2>
+                        </header>
+
+                        <p>The project began with detailed data preparation in Power BI. Key steps included:</p>
+                        <ul>
+                            <li>Trimming and standardizing text fields to maintain data consistency.</li>
+                            <li>Creating a conditional column to clearly identify each holiday type.</li>
+                            <li>Verifying that all data types were correct and ensuring there were no missing values.</li>
+                            <li>Using Power Query for transformation and cleaning.</li>
+                        </ul>
+
+                        <div class="image-container">
+                            <img src="images/powerquery.png" alt="Transformed Data" class="centered-image">
+                            <p class="image-caption">Fig 1. Dataset after transformation.</p>
+                        </div>
+                      
+                          <p>These steps ensured that the dataset was properly structured for accurate analysis.</p>
+                          <p>Next, the cleaned data was loaded into Power BI:</p>
+                          <ul>
+                            <li>Created <strong>DAX measures</strong> for aggregations and conditional logic.</li>
+                            <li>Built a <strong>Date Dimension Table</strong> using DAX for accurate time-series analysis.</li>
+                        </ul>
+                        <div class="image-container">
+                            <img src="images/powerbi.png" alt="Loaded Data" class="centered-image">
+                            <p class="image-caption">Fig 2. Dataset after loading into the model.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Four -->
+                <section id="four">
+                    <div class="container">
+                        <header class="major">
+                            <h2>Dashboard Design and Creation</h2>
+                        </header>
+
+                        <p>After cleaning and modeling the dataset, I developed an interactive Power BI dashboard highlighting key sales insights across stores and time periods.</p>
+
+                        <p>The dashboard includes visualizations showing:</p>
+                        <ul>
+                            <li>Sales trends by store</li>
+                            <li>Performance across years and months</li>
+                            <li>Holiday vs non-holiday sales behavior</li>
+                            <li>Seasonal patterns</li>
+                            <li>Impacts of external factors (temperature, fuel price, CPI, unemployment)</li>
+                        </ul>
+                        <p>These visuals give a clear understanding of the drivers of sales performance and support operational and strategic planning.</p>
+
+                        <div class="image-container">
+                            <img src="images/bidashboard.png" alt="Walmart Dashboard" class="centered-image">
+                            <p class="image-caption">Fig 3. Walmart Sales Dashboard.</p>
+                        </div>
+
+                        <p>
+                            To enhance usability, slicers were added to allow filtering by:
+                        </p>
+                        <ul>
+                            <li>Store</li>
+                            <li>Department</li>
+                            <li>Year</li>
+                            <li>Month</li>
+                            <li>Holiday Periods</li>
+                        </ul>
+                        <p>
+                          This level of interactivity allows users to drill into specific periods, stores, or conditions, enabling deeper analysis.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Five -->
+                <section id="five">
+                    <div class="container">
+                        <header class="major">
+                            <h2>Conclusion</h2>
+                        </header>
+
+                        <p>
+                            Key insights from the Walmart sales analysis include:
+                        </p>
+                        <ul>
+                            <li><strong>Seasonal and holiday spikes</strong> significantly influence weekly sales, especially during Thanksgiving and Christmas.</li>
+                            <li><strong>Top-performing stores</strong> consistently drive the majority of revenue, while lower-performing stores may require strategic intervention.</li>
+                            <li><strong>External factors</strong> such as fuel price, temperature, CPI, and unemployment show varying levels of correlation with sales performance.</li>
+                            <li><strong>Forecasted weekly sales</strong> help inform inventory planning, staffing allocation, and promotional strategies.</li>
+                        </ul>
+
+                        <ul class="actions">
+                            <li><a href="https://github.com/Joseph-B1/data-analysis-project/blob/main/walmart.pbix" class="button primary">Download on GitHub</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
