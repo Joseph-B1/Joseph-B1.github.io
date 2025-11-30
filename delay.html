@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Airline Flight Delay – Excel/Power BI Project</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+    <body class="is-preload">
+
+            <!-- Header -->
+            <section id="header">
+                <header>
+                    <h1 id="logo"><a href="#">Airline Flight Delay</a></h1>
+                    <p>Analyzing flight delay patterns</p>
+                </header>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#one" class="active">Goal</a></li>
+                        <li><a href="#two">Background Information</a></li>
+                        <li><a href="#three">Setup</a></li>
+                        <li><a href="#four">Dashboard Design and Creation</a></li>
+                        <li><a href="#five">Conclusion</a></li>
+                    </ul>
+                </nav>
+
+                <footer>
+                    <ul class="icons">
+                        <li><a href="https://github.com/Joseph-B1" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/joseph-bassey-a21792282" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="mailto:josephbassey65@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                </footer>
+            </section>
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+            
+            <!-- Main -->
+            <div id="main">
+
+                <!-- One -->
+                <section id="one">
+                    <div class="image main" data-position="center">
+                        <img src="images/bibanner.png" alt="" />
+                    </div>
+                    <div class="container">
+                        <header class="major">
+                            <h2>Goal</h2>
+                        </header>
+                        <p>
+                            The goal of this project was to analyze flight delay patterns using the Maven Analytics Airline Flight Delays dataset. The analysis focused on identifying the key contributors to delays, understanding the performance of different airlines and routes, and uncovering operational factors that influence arrival and departure punctuality. The objective was to generate insights that can help airlines improve schedule reliability, reduce operational delays, and enhance overall on-time performance for passengers.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Two -->
+                <section id="two">
+                    <div class="container">
+                        <header class="major">
+                            <h2>Background Information</h2>
+                        </header>
+
+                        <p>The dataset contains detailed U.S. domestic flight records from the Maven Analytics Airline Flight Delays dataset. It includes information on departure and arrival performance, delay causes, aircraft identifiers, and route details.<br>
+                          Fields included:</p>
+                        <ul>
+                            <li><strong>DAY_OF_WEEK:</strong> Day of the week the flight operated</li>
+                            <li><strong>AIRLINE:</strong> Airline carrier code</li>
+                            <li><strong>FLIGHT_NUMBER:</strong> Flight’s unique identifier</li>
+                            <li><strong>TAIL_NUMBER:</strong> Aircraft registration</li>
+                            <li><strong>ORIGIN_AIRPORT:</strong> Airport where the flight departed</li>
+                            <li><strong>DESTINATION_AIRPORT:</strong> Airport where the flight landed</li>
+                            <li><strong>SCHEDULED_DEPARTURE:</strong> Planned departure time</li>
+                            <li><strong>DEPARTURE_TIME:</strong> Actual departure time</li>
+                            <li><strong>DEPARTURE_DELAY:</strong> Minutes delayed at departure (positive or negative)</li>
+                            <li><strong>TAXI_OUT:</strong> Taxi-out duration before takeoff</li>
+                            <li><strong>WHEELS_OFF:</strong> Time aircraft left the ground</li>
+                            <li><strong>SCHEDULED_TIME:</strong> Planned total flight time</li>
+                            <li><strong>ELAPSED_TIME:</strong> Actual total flight duration</li>
+                            <li><strong>AIR_TIME:</strong> Time spent in the air</li>
+                            <li><strong>DISTANCE:</strong> Route distance in miles</li>
+                            <li><strong>WHEELS_ON:</strong> Time aircraft touched down</li>
+                            <li><strong>TAXI_IN:</strong> Taxi-in duration after landing</li>
+                            <li><strong>SCHEDULED_ARRIVAL:</strong> Planned arrival time</li>
+                            <li><strong>ARRIVAL_TIME:</strong> Actual arrival time</li>
+                            <li><strong>ARRIVAL_DELAY:</strong> Minutes delayed at arrival</li>
+                            <li><strong>CANCELLED:</strong> Flight cancelled, 0 = Not cancelled</li>
+                            <li><strong>CANCELLATION_REASON:</strong> details explaining cancellation</li>
+                            <li><strong>AIR_SYSTEM_DELAY:</strong> ATC or airspace-related delay (minutes)</li>
+                            <li><strong>SECURITY_DELAY:</strong> Security-related delay (minutes)</li>
+                            <li><strong>AIRLINE_DELAY:</strong> Carrier-related delay (minutes)</li>
+                            <li><strong>LATE_AIRCRAFT_DELAY:</strong> Delay caused by late-arriving inbound aircraft</li>
+                            <li><strong>WEATHER_DELAY:</strong> Weather-related delay (minutes)</li>
+                        </ul>
+                      </div>
+                </section>
+
+                <!-- Three -->
+                <section id="three">
+                    <div class="container">
+                        <header class="major">
+                            <h2>Setup</h2>
+                        </header>
+
+                        <p>The project began with detailed data cleaning and preparation in Excel. Key steps included:</p>
+                        <ul>
+                            <li>Removal of blank rows and duplicates</li>
+                            <li>Trimming and standardizing text fields to maintain data consistency.</li>
+                            <li>Creating conditional columns to clearly identify and explain in details cancelled, arrival and departure delays</li>
+                            <li>importing values from the airline sheet using vlookup</li>
+                            <li>Verifying that all data types were correct and ensuring there were no missing values.</li>
+                        </ul>
+
+                        <div class="image-container">
+                            <img src="images/delayexcel.png" alt="Cleaned Data" class="centered-image">
+                            <p class="image-caption">Fig 1. Dataset after Cleaning.</p>
+                        </div>
+                      
+                        <ul class="actions">
+                            <li><a href="https://github.com/Joseph-B1/data-analysis-project/blob/main/flights.xlsx" class="button primary">Download on GitHub</a></li>
+                        </ul>
+                      
+                          <p>These steps ensured that the dataset was properly cleaned and structured for accurate analysis.</p>
+                          <p>Next, the cleaned data was loaded into Power BI:</p>
+                          <ul>
+                            <li>Through transformation in power query, Created two new tables <strong>Airport Origin and Airport Destination</strong> to create a route map when visualizing</li>
+                            <li>Created <strong>DAX measures</strong> for aggregations and KPIs.</li>
+                        </ul>
+                        <div class="image-container">
+                            <img src="images/delaybi.png" alt="Loaded Data" class="centered-image">
+                            <p class="image-caption">Fig 2. Creating of DAX measures.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Four -->
+                <section id="four">
+                    <div class="container">
+                        <header class="major">
+                            <h2>Dashboard Design and Creation</h2>
+                        </header>
+
+                        <p>After cleaning and modeling the dataset, I developed an interactive Power BI dashboard presenting key insights into flight punctuality, delay patterns, and airline performance.</p>
+
+                        <p>The dashboard includes visualizations showing:</p>
+                        <ul>
+                            <li>Delay trends across airlines</li>
+                            <li>Arrival vs departure delay behavior</li>
+                            <li>Cancellation rate</li>
+                            <li>Percentage delay</li>
+                            <li>Route-level analysis using a flight path map</li>
+                        </ul>
+                        <p>These visuals provide a clear understanding of the factors influencing delays and support operational decisions around scheduling, route planning, and performance improvement.</p>
+
+                        <div class="image-container">
+                            <img src="images/delayboard.png" alt="Flight Delay Dashboard" class="centered-image">
+                            <p class="image-caption">Fig 3. Airline Flight Delay Dashboard.</p>
+                        </div>
+                      
+                        <p>
+                          This level of interactivity allows users to drill into specific airlines, routes, days, or delay conditions, enabling deeper and more targeted analysis.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Five -->
+                <section id="five">
+                    <div class="container">
+                        <header class="major">
+                            <h2>Conclusion</h2>
+                        </header>
+
+                        <p>The analysis of 3,999 flights reveals that delays and cancellations are significant operational challenges for several airlines and routes. Although the overall on-time performance is relatively strong, with over 80% of flights arriving and departing on time, delays still affect a notable portion of flights, 14.6% delayed and 5.78% cancelled.<br>
+                          Key findings show that:</p>
+                        <ul>
+                            <li><strong>Departure and arrival patterns are consistent</strong>, with delayed flights accounting for roughly 10–13% in both categories.</li>
+                            <li><strong>Certain routes stand out as high-risk</strong>, especially those appearing repeatedly in the <strong>Top 10 Cancelled Routes and Top 10 Most Delayed Routes</strong>, indicating systemic scheduling or congestion issues.</li>
+                            <li><strong>Airline-specific delay profiles vary significantly</strong>. Some carriers experience disproportionately higher delays due to <strong>late aircraft, air system constraints, or weather</strong>, highlighting differences in operational efficiency.</li>
+                            <li>Weather-related and security delays are present but relatively low, while <strong>Airline Delay and Late Aircraft Delay</strong> are the largest contributors overall.</li>
+                        </ul>
+                        <p>The route map provides a clear visual of delay concentration across regions, showing that performance issues are not evenly distributed geographically.<br>
+                          Overall, the dashboard helps identify where delays originate, which airlines and routes are most affected, and what factors contribute most to punctuality problems. These insights support strategic decisions around <strong>route planning, scheduling efficiency, resource allocation, and operational improvements</strong> aimed at increasing on-time performance and reducing cancellations.
+                        </p>
+
+                        <ul class="actions">
+                            <li><a href="https://github.com/Joseph-B1/data-analysis-project/blob/main/flight%20delay.pbix" class="button primary">Download on GitHub</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
